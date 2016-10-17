@@ -1,0 +1,4 @@
+test_script: 
+  - lein test
+
+build: off
