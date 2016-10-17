@@ -1,5 +1,8 @@
 install:
   - ps: Install-Product node 4
+  - wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat
+  - chmod a+x lein.bat
+  - lein self-install
 
 test_script: 
   - lein test
