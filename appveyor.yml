@@ -1,9 +1,8 @@
 install:
   - ps: Install-Product node 4
-  - cmd: $source = "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat"
-  - cmd: $destination = %APPDATA%\lein.bat
-  - cmd: Invoke-WebRequest $source -OutFile $destination
-  - set PATH=$destination;%PATH%
+  - ps: Start-FileDownload 'https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat'
+  - cmd: move lein.bat %APPDATA%
+  - set PATH=%APPDATA%\lein.bat;%PATH%
   - chmod a+x lein.bat
   - lein self-install
 
