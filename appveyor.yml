@@ -3,7 +3,7 @@ install:
   - ps: Start-FileDownload 'https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat'
   - cmd: move lein.bat %APPDATA%
   - set PATH=%APPDATA%\lein.bat;%PATH%
-  - chmod a+x lein.bat
+  - chmod a+x %APPDATA%\lein.bat
   - lein self-install
 
 test_script: 
