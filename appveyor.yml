@@ -1,11 +1,12 @@
 install:
   - ps: Install-Product node 4
-  - ps: Start-FileDownload 'https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat'
-  - cmd: move lein.bat %APPDATA%
-  - set PATH=%APPDATA%\lein.bat;%PATH%
-  - chmod a+x %APPDATA%\lein.bat
-  - lein self-install
-
+  # - ps: Start-FileDownload 'https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat'
+  # - cmd: move lein.bat %APPDATA%
+  # - set PATH=%APPDATA%\lein.bat;%PATH%
+  # - chmod a+x %APPDATA%\lein.bat
+  # - lein self-install
+  - ps: Start-FileDownload "https://bitbucket.org/djpowell/leiningen-win-installer/downloads/leiningen-installer-1.0.exe"
+  - cmd: leiningen-installer-1.0.exe
 test_script: 
   - lein test
 
